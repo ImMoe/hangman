@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+@font-face {
+  font-family: PineForest;
+  src: url(../fonts/pine_forest.otf) format('opentype');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  padding: 1rem;
+}
+
+.life {
+  font-size: 1.5rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(-5rem) translateY(1rem);
+}
+
+.life span {
+  color: red;
+  font-weight: bold;
+}
+
+h1 {
+  font-family: PineForest, sans-serif;
+  font-size: 5rem;
+  /* transform: rotate(-5deg); */
+  text-align: center;
+}
+
+.question {
+  font-size: calc(1.5em + 1vmin);
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.answer {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.answer p {
+  font-size: calc(2em + 2vmin);
+  font-weight: bold;
+}
+
+.next-question {
+  padding: 1rem;
+  border: 2px solid #222;
+  border-radius: 4px;
+  background: transparent;
+  color: #222;
+  display: block;
+  margin: 2rem auto;
+  font-size: calc(0.4em + 1.2vmin);
+  text-transform: uppercase;
+}
+
+.next-question:hover {
+  background-color: #222;
+  color: #fff;
+  transition: all 300ms ease;
+}
+
+.alphabets {
+  width: 50%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 10px;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.word {
+  font-size: calc(1em + 1vmin);
+  padding: 1rem;
+  border: 1px solid #eee;
+  cursor: pointer;
+}
+
+.word:hover {
+  background-color: #eee;
+  font-weight: bold;
+  transition: all 300ms linear;
+}
+
+.display-message {
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: calc(3em + 1vmin);
+  text-transform: uppercase;
+  font-weight: bold;
+  display: none;
+}
+.gameover {
+  background-color: rgba(161, 15, 15, 0.959);
+}
+
+.success {
+  background-color: #3aab63f1;
+}
+
+@media screen and (max-width: 1180px) {
+  .alphabets {
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  }
+  .word {
+    font-weight: bold;
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  h1 {
+    font-size: 3.5rem;
+    text-align: left;
+  }
+  .question {
+    font-size: 1.1rem;
+  }
+  .life {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(-1rem) translateY(0.6rem);
+  }
+  .answers,
+  .alphabets {
+    width: 100%;
+  }
+
+  .word {
+    font-weight: bold;
+    padding: 5px;
+  }
+}
